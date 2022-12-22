@@ -1,0 +1,41 @@
+.card {
+    border:solid paleturquoise 2px; 
+    margin:10px;
+    padding:10px;
+}
+
+.q {
+    font-weight: 400;
+    font-size:25px;
+    margin:5px;
+
+}
+
+.head{
+    width:100%
+}
+
+.meta {
+    width:100%;
+}
+
+
+
+.ansButton{
+    border: solid paleturquoise 2px;
+    height:120px;
+    padding:2px;
+}
+
+.scoreDiv{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+.score {
+    background-color:white;
+    height: 40px;
+    font-size:24px;
+    margin:20px;
+}

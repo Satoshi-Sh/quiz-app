@@ -1,6 +1,7 @@
 import './homepage.css'
 import React, { useState, useEffect,useContext } from 'react';
 import { ThemeContext } from '../../App';
+import {useNavigate} from 'react-router-dom'
 
 const baseURL = 'https://the-trivia-api.com/api/'
 
@@ -8,6 +9,7 @@ const Homepage = () => {
    const [categories,setCategories] = useState([])
    const [selectedC,setSelectedC] = useState([])
    const [selectedL,setSelectedL] = useState('')
+   const navigate = useNavigate()
    
    const list = ['easy','medium','hard']
    const  {dark} = useContext(ThemeContext)
@@ -35,9 +37,6 @@ const Homepage = () => {
    }
 
    const proceedQuiz = () =>{
-      console.log(selectedL)
-      console.log(selectedC)
-
       let catStr = ''
       if (selectedC.length>0){
       for (let i=0; i<selectedC.length; i++){
@@ -51,10 +50,16 @@ const Homepage = () => {
       }
       
       const query = baseURL +'questions?' + catStr + 'limit=10' + level 
-      console.log(query)
       fetch(query)
       .then(res=>res.json())
-      .then(data => console.log(data))
+      .then(data => {
+         data.map(quiz=>{
+            quiz.answers = [...quiz.incorrectAnswers,quiz.correctAnswer].map(value => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value)  
+            return quiz
+         } )
+         navigate('/game', {state: {data}})})
       .catch(error => console.log(error))
    }
    
