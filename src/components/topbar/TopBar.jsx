@@ -14,7 +14,7 @@ export default function TopBar() {
        render:(
       <div className="top">
          <div className="topLeft" >
-         <h1 className='logo'>Trivia Quiz</h1> 
+         <h1 className='logo'>Trivia</h1> 
          </div>
       <div className="topCenter">
         <ul className="topList">
@@ -29,7 +29,7 @@ export default function TopBar() {
       <div className="topRight">
         <ul className="topList">
             <img 
-            src={dark? sun:moon} className='topImg' onClick={handleClick}/>
+            src={dark? moon:sun} className='topImg' onClick={handleClick}/>
         </ul>
       </div>
     </div>)

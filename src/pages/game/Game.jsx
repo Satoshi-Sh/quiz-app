@@ -9,8 +9,8 @@ const Game = () => {
    const  {dark} = useContext(ThemeContext)
    
    const themeStyle = {
-      backgroundColor: dark? 'white':'grey',
-      color: dark? 'black': 'white' 
+      backgroundColor: !dark? 'white':'grey',
+      color: !dark? 'black': 'white' 
    }
    const navigate = useNavigate()
    const location = useLocation()

@@ -6,8 +6,8 @@ import {useNavigate,useLocation} from 'react-router-dom';
 const Score = () => {
    const  {dark} = useContext(ThemeContext)
    const themeStyle = {
-      backgroundColor: dark? 'white':'grey',
-      color: dark? 'black': 'white' 
+      backgroundColor: !dark? 'white':'grey',
+      color: !dark? 'black': 'white' 
    }
    const location = useLocation()
    const score = location.state.correct *10

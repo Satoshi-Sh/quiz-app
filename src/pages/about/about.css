@@ -1,3 +1,19 @@
+@media screen and (max-width: 640px){
+    body .about{
+     border:none;
+     height:auto;
+     
+    }
+    body .categories, body .states, body .difficulties{
+        list-style: none;
+        display:grid;
+        grid-template-columns:200px;
+        grid-gap:40px;
+        margin-top:20px;
+    }
+}
+
+
 .about {
     padding:30px;
     width:80vw;

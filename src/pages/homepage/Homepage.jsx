@@ -75,8 +75,8 @@ const Homepage = () => {
     }
    
    const themeStyle = {
-      backgroundColor: dark? 'white':'grey',
-      color: dark? 'black': 'white' 
+      backgroundColor: !dark? 'white':'grey',
+      color: !dark? 'black': 'white' 
    }
 
     return (

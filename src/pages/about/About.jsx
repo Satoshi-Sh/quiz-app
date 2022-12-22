@@ -28,8 +28,8 @@ const About = () => {
    
    
    const themeStyle = {
-      backgroundColor: dark? 'white':'grey',
-      color: dark? 'black': 'white' 
+      backgroundColor: !dark? 'white':'grey',
+      color: !dark? 'black': 'white' 
    }
     return (
     <div className='about' style={themeStyle}>
