@@ -10,16 +10,22 @@
   z-index: 999;
 }
 
-.topLeft,
-.topRight {
+.topLeft {
   flex: 3;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.topRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .topCenter {
-  flex: 6;
+  flex: 3;
 }
 
 

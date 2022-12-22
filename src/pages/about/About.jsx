@@ -1,11 +1,14 @@
 import './about.css'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
+import { ThemeContext } from '../../App';
+
 const About = () => {
    const [categories,setCategories] = useState({})
    const [states,setStates] = useState({})
    const [difficulties,setDifficulties] = useState({})
    const list = ['easy','medium','hard']
    const state_list = ['pending','approved','rejected']
+   const  {dark} = useContext(ThemeContext)
 
    useEffect(()=>{
       fetch('https://the-trivia-api.com/api/metadata')
@@ -21,10 +24,15 @@ const About = () => {
    function capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
+   
+   const themeStyle = {
+      backgroundColor: dark? 'white':'grey',
+      color: dark? 'black': 'white' 
+   }
     return (
-    <div className='about'>
+    <div className='about' style={themeStyle}>
        <h1 className='header'>About</h1>
-       <p>This application used <a href="https://the-trivia-api.com/" id='link'>The Trivia API</a> to get quizzes.</p>
+       <p>This application used <a href="https://the-trivia-api.com/" target='_blank' id='link'>The Trivia API</a> to get quizzes.</p>
        <h2 className='header'>Categories</h2>
        <div className='categories'>
           {Object.keys(categories).map(key =>

@@ -10,7 +10,8 @@ export default function TopBar() {
     function handleClick(){
       setDark(prev=>!prev)
     }
-    return (
+    return {dark,
+       render:(
       <div className="top">
          <div className="topLeft" >
          <h1 className='logo'>Trivia Quiz</h1> 
@@ -31,6 +32,6 @@ export default function TopBar() {
             src={dark? sun:moon} className='topImg' onClick={handleClick}/>
         </ul>
       </div>
-    </div>
-    );
+    </div>)
+      }
   }
