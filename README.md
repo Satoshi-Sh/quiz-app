@@ -1,6 +1,7 @@
 # Quis Application 
 
 Quiz application's built with React and The Trivia API(https://the-trivia-api.com/)
+You can play the game here (https://satoshi-sh.github.io/quiz-app/)
 
 
 # Getting Started with Create React App
